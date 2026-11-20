@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Light + Logic — Design and development studio</title>
+<meta name="description" content="Light + Logic is a founder-led studio designing and building websites, business apps and automation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="is-loading">
+
+<!-- Loading sequence -->
+<div class="loader" aria-hidden="true">
+  <div class="loader-grid"></div>
+  <div class="loader-flash"></div>
+  <div class="loader-art"></div>
+  <div class="loader-meta"><span>light + logic</span><span>[ <b class="loader-count">000</b> / 100 ]</span></div>
+  <div class="loader-bands"><i></i><i></i><i></i><i></i></div>
+</div>
+
+<header class="nav">
+  <a class="brand" href="#top" aria-label="Light + Logic, home">
+    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><rect width="17" height="17" fill="currentColor"/><rect x="9.75" y="9.75" width="15.5" height="15.5" stroke="currentColor" stroke-width="1.5" fill="var(--mark-bg,#060607)"/></svg>
+    <span>light + logic</span>
+  </a>
+  <nav class="nav-links glass-d" aria-label="Primary">
+    <a href="#work">Work</a><a href="#capabilities">Capabilities</a><a href="#lab">Lab</a><a href="#method">Studio</a><a href="#notes">Notes</a>
+  </nav>
+  <a class="btn btn-white nav-cta" href="#brief"><span>Start a brief</span><svg class="arr" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4.5M11 3V9.5" stroke="currentColor" stroke-width="1.5"/></svg></a>
+  <button class="menu-btn glass-d" aria-expanded="false" aria-controls="menu">Menu</button>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <a href="#work">Work</a><a href="#capabilities">Capabilities</a><a href="#lab">Lab</a><a href="#method">Studio</a><a href="#notes">Notes</a><a href="#brief">Start a brief</a>
+</div>
+
+<main>
+<!-- 01 Hero -->
+<section class="hero dark" id="top">
+  <div class="hero-glow"></div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="gi" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".35" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff"/></linearGradient>
+      <linearGradient id="ga" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFB45E"/><stop offset="1" stop-color="#FFB45E" stop-opacity=".05"/></linearGradient>
+      <linearGradient id="gr" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FF6FA8"/><stop offset="1" stop-color="#FF6FA8" stop-opacity=".05"/></linearGradient>
+      <linearGradient id="gv" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8E7BFF"/><stop offset="1" stop-color="#8E7BFF" stop-opacity=".05"/></linearGradient>
+      <linearGradient id="gc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5EC8FF"/><stop offset="1" stop-color="#5EC8FF" stop-opacity=".05"/></linearGradient>
+    </defs>
+  </svg>
+  <svg class="art art-d" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMin slice" fill="none" aria-hidden="true">
+    <polygon class="a-beam" points="0,372 0,376 742,318 742,314" fill="url(#gi)"/>
+    <g class="a-fan" opacity=".9">
+      <polygon points="826,330 1440,96 1440,170" fill="url(#ga)"/>
+      <polygon points="826,330 1440,170 1440,250" fill="url(#gr)"/>
+      <polygon points="826,330 1440,250 1440,338" fill="url(#gv)"/>
+      <polygon points="826,330 1440,338 1440,436" fill="url(#gc)"/>
+    </g>
+    <rect class="a-sq1" x="700" y="246" width="84" height="84" fill="#fff" stroke="#fff" stroke-width="1.5"/>
+    <rect class="a-sq2" x="742.75" y="288.75" width="82.5" height="82.5" stroke="#fff" stroke-width="1.5" fill="#060607" fill-opacity=".55"/>
+    <rect class="a-ov" x="742" y="288" width="42" height="42" fill="#fff" fill-opacity=".35"/>
+  </svg>
+  <svg class="art art-m" viewBox="0 0 390 380" preserveAspectRatio="xMidYMin slice" fill="none" aria-hidden="true">
+    <polygon class="a-beam" points="0,214 0,217 132,186 132,183" fill="url(#gi)"/>
+    <g class="a-fan" opacity=".9">
+      <polygon points="176,194 390,84 390,132" fill="url(#ga)"/>
+      <polygon points="176,194 390,132 390,186" fill="url(#gr)"/>
+      <polygon points="176,194 390,186 390,246" fill="url(#gv)"/>
+      <polygon points="176,194 390,246 390,312" fill="url(#gc)"/>
+    </g>
+    <rect class="a-sq1" x="110" y="150" width="44" height="44" fill="#fff" stroke="#fff" stroke-width="1.5"/>
+    <rect class="a-sq2" x="132.75" y="172.75" width="42.5" height="42.5" stroke="#fff" stroke-width="1.5" fill="#060607" fill-opacity=".55"/>
+    <rect class="a-ov" x="132" y="172" width="22" height="22" fill="#fff" fill-opacity=".35"/>
+  </svg>
+
+  <div class="hero-content wrap">
+    <p class="label hero-label">[ Design + development studio ]</p>
+    <h1 class="display hero-title"><span class="split w300">A better website.</span> <span class="split w500">A simpler workday.</span></h1>
+    <div class="hero-row">
+      <p class="lede hero-lede">Light + Logic is a founder-led studio designing and building websites, business apps and automation for companies that want both.</p>
+      <div class="hero-actions">
+        <a class="link" href="#work">See the work</a>
+        <a class="btn btn-accent btn-lg" href="#brief"><span>Start a project brief</span><svg class="arr" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4.5M11 3V9.5" stroke="currentColor" stroke-width="1.5"/></svg></a>
+      </div>
+    </div>
+    <div class="status glass-d">
+      <span>Virginia Beach, VA <span class="hide-m">— working worldwide</span></span>
+      <span class="clock"><i class="dot"></i><span data-clock>00 : 00 : 00 EST</span></span>
+      <span class="hide-m">One active build at a time</span>
+      <span>Scroll ↓</span>
+    </div>
+  </div>
+</section>
+
+<!-- 02 Manifesto -->
+<section class="manifesto light" id="studio">
+  <div class="bloom b-warm" style="left:-16%;top:-22%;width:58%;height:80%"></div>
+  <div class="bloom b-cool" style="right:-22%;bottom:-30%;width:54%;height:76%"></div>
+  <div class="wrap manifesto-grid">
+    <p class="label">[ 01 — The studio ]</p>
+    <div>
+      <p class="statement manifesto-text">Good work has two sides. The side people see: clear, considered, <em>a pleasure to use.</em> And the side they never see: the structure, the code, <em>the quiet systems</em> that make it hold. Most studios are strong on one. We built ours around both.</p>
+      <div class="signature">
+        <strong>Brandon Del Rosario</strong>
+        <span>Founder<br>Designer + developer</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 Selected work -->
+<section class="work dark" id="work">
+  <div class="bloom b-violet" style="right:-18%;top:-12%;width:62%;height:46%"></div>
+  <div class="bloom b-rose" style="left:-18%;top:32%;width:68%;height:50%"></div>
+  <div class="bloom b-cyan" style="right:-8%;bottom:-8%;width:60%;height:44%"></div>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label">[ 02 — Selected work ]</p>
+      <p class="label hide-m">04 of 05 projects shown</p>
+    </div>
+    <h2 class="display sec-title"><span class="split w300">Built to be</span> <span class="split w500">seen.</span></h2>
+
+    <div class="work-list">
+      <article class="row glass-d is-open">
+        <button class="row-head" aria-expanded="true">
+          <span class="idx">01</span><span class="row-name">Overwatch Security Group</span>
+          <span class="row-meta">Brand identity / Web design / Development</span><span class="row-act"></span>
+        </button>
+        <div class="row-body"><div class="row-inner">
+          <div class="capture">
+            <div class="capture-bar"><span>overwatchsecuritygroup.com</span><span>Scrolling capture</span></div>
+            <div class="capture-stage"><span class="ph">[ Placeholder — replace with site capture ]</span><p class="capture-line">Protection built<br>on discipline.</p></div>
+          </div>
+          <div class="row-info">
+            <div>
+              <p class="row-desc">A new name, a new identity and a new site for a security firm that needed to look as disciplined as it operates.</p>
+              <dl class="facts"><div><dt>Role</dt><dd>Identity, design, build</dd></div><div><dt>Sector</dt><dd>Private security</dd></div></dl>
+            </div>
+            <a class="link" href="#">View the case study <span class="up">↗</span></a>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="row glass-d">
+        <button class="row-head" aria-expanded="false">
+          <span class="idx">02</span><span class="row-name">Visari Financial</span>
+          <span class="row-meta">Web design / Development</span><span class="row-act"></span>
+        </button>
+        <div class="row-body"><div class="row-inner">
+          <div class="capture">
+            <div class="capture-bar"><span>Visari Financial</span><span>Scrolling capture</span></div>
+            <div class="capture-stage tone-b"><span class="ph">[ Placeholder — replace with site capture ]</span><p class="capture-line sc">Financial clarity.<br>Fully executed.</p></div>
+          </div>
+          <div class="row-info">
+            <div>
+              <p class="row-desc">Design and build of the Visari Financial website.</p>
+              <dl class="facts"><div><dt>Role</dt><dd>Design, build</dd></div><div><dt>Sector</dt><dd>Financial services</dd></div></dl>
+            </div>
+            <a class="link" href="#">View the case study <span class="up">↗</span></a>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="row glass-d">
+        <button class="row-head" aria-expanded="false">
+          <span class="idx">03</span><span class="row-name">Ascentra People Advisory</span>
+          <span class="row-meta">Web design / Development</span><span class="row-act"></span>
+        </button>
+        <div class="row-body"><div class="row-inner">
+          <div class="capture">
+            <div class="capture-bar"><span>Ascentra People Advisory</span><span>Scrolling capture</span></div>
+            <div class="capture-stage tone-c"><span class="ph">[ Placeholder — replace with site capture ]</span></div>
+          </div>
+          <div class="row-info">
+            <div>
+              <p class="row-desc">Design and build of the Ascentra People Advisory website.</p>
+              <dl class="facts"><div><dt>Role</dt><dd>Design, build</dd></div><div><dt>Sector</dt><dd>People advisory</dd></div></dl>
+            </div>
+            <a class="link" href="#">View the case study <span class="up">↗</span></a>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="row glass-d">
+        <button class="row-head" aria-expanded="false">
+          <span class="idx">04</span><span class="row-name">Billy James Real Estate</span>
+          <span class="row-meta">Web design / Development</span><span class="row-act"></span>
+        </button>
+        <div class="row-body"><div class="row-inner">
+          <div class="capture">
+            <div class="capture-bar"><span>Billy James Real Estate</span><span>Scrolling capture</span></div>
+            <div class="capture-stage tone-d"><span class="ph">[ Placeholder — replace with site capture ]</span></div>
+          </div>
+          <div class="row-info">
+            <div>
+              <p class="row-desc">Design and build of the Billy James Real Estate website.</p>
+              <dl class="facts"><div><dt>Role</dt><dd>Design, build</dd></div><div><dt>Sector</dt><dd>Real estate</dd></div></dl>
+            </div>
+            <a class="link" href="#">View the case study <span class="up">↗</span></a>
+          </div>
+        </div></div>
+      </article>
+    </div>
+    <p class="after-list"><a class="link" href="#">All work <span class="up">↗</span></a></p>
+  </div>
+</section>
+
+<!-- 04 Capabilities -->
+<section class="caps dark" id="capabilities">
+  <div class="bloom b-violet" style="right:-6%;top:6%;width:62%;height:84%"></div>
+  <div class="bloom b-rose2" style="left:-16%;bottom:-14%;width:52%;height:60%"></div>
+  <div class="wrap caps-grid">
+    <div class="caps-left">
+      <p class="label">[ 03 — Capabilities ]</p>
+      <p class="caps-lede">Three things, done properly, by the same hands from first sketch to final commit.</p>
+      <div class="cap-list" role="tablist">
+        <button class="cap glass-d is-on" role="tab" aria-selected="true"><span class="idx">01</span><span class="cap-body"><span class="cap-name">Websites</span><span class="cap-more"><span class="cap-desc">A clear, confident home for the business. Designed, written into shape and built by hand, then handed over ready to edit.</span><span class="cap-tags">Strategy / Design / Build / CMS / Search foundations</span></span></span></button>
+        <button class="cap glass-d" role="tab" aria-selected="false"><span class="idx">02</span><span class="cap-body"><span class="cap-name">Business apps</span><span class="cap-more"><span class="cap-desc">An awkward spreadsheet or a repeated task, turned into one focused tool built around the people who use it.</span><span class="cap-tags">Planning blueprint / Design / Build / One clear workflow</span></span></span></button>
+        <button class="cap glass-d" role="tab" aria-selected="false"><span class="idx">03</span><span class="cap-body"><span class="cap-name">Automation</span><span class="cap-more"><span class="cap-desc">The tools you already have, connected. Inquiries captured, drafts prepared, handoffs kept moving, with a person in the loop where it matters.</span><span class="cap-tags">One process / Connected tools / Human review</span></span></span></button>
+      </div>
+    </div>
+    <div class="caps-right">
+      <div class="fig-head"><span data-fig-label>Fig. 01 — Wireframe to finished page</span><span data-fig-count>01 / 03</span></div>
+      <div class="fig glass-d">
+        <div class="vig vig-web is-on">
+          <div class="wf">
+            <div class="wf-nav"><i style="width:72px;height:14px"></i><span><i style="width:36px;height:10px"></i><i style="width:36px;height:10px"></i></span></div>
+            <i style="width:72%;height:38px;margin-top:44px"></i><i style="width:54%;height:38px"></i>
+            <b style="width:66%"></b><b style="width:60%"></b><b style="width:40%"></b>
+            <i style="width:120px;height:40px"></i><i class="grow"><span>Image 16:9</span></i>
+          </div>
+          <div class="fin">
+            <div class="fin-nav"><strong>Northline</strong><span>Services&nbsp;&nbsp;&nbsp;About</span></div>
+            <p class="fin-h"><span class="w500">Built right.</span><br><span class="w300">On time.</span></p>
+            <p class="fin-p">Commercial fit-outs across the mid-Atlantic, delivered by one accountable crew.</p>
+            <span class="fin-btn">Request a quote</span>
+            <span class="fin-img"></span>
+          </div>
+          <span class="scan"></span>
+        </div>
+        <div class="vig vig-app">
+          <div class="mini">
+            <div class="mini-top"><strong>Invoice 0142</strong><span>Draft</span></div>
+            <div class="mini-row st"><span>Demolition and site prep</span><span>1,360.00</span></div>
+            <div class="mini-row st"><span>Framing, interior partitions</span><span>3,570.00</span></div>
+            <div class="mini-row st"><span>Drywall materials</span><span>2,180.00</span></div>
+            <div class="mini-row st hl"><span>Finish carpentry</span><span>1,140.00</span></div>
+            <div class="mini-total st"><span>Total</span><strong>$8,745.00</strong></div>
+          </div>
+        </div>
+        <div class="vig vig-auto">
+          <div class="flowv">
+            <div class="fstep st"><em>Trigger</em><span>New inquiry form</span><b>Done</b></div>
+            <div class="fstep st"><em>Condition</em><span>Does it fit a service?</span><b>Yes</b></div>
+            <div class="fstep st"><em>Action</em><span>Draft proposal from template</span><b>Done</b></div>
+            <div class="fstep st"><em>Review</em><span>A person approves before it sends</span><b>Approved</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 The Lab -->
+<section class="lab quiet" id="lab">
+  <div class="bloom b-lab" style="left:-10%;top:30%;width:78%;height:70%"></div>
+  <div class="wrap">
+    <div class="lab-head">
+      <div>
+        <p class="label">[ 04 — The Lab ]</p>
+        <h2 class="display sec-title"><span class="split w300">The</span> <span class="split w500">Lab</span></h2>
+      </div>
+      <div class="lab-intro" data-rv>
+        <p>Things we built to see if we could. These two are live. Go on, try them.</p>
+        <span class="small">Studio experiments, not client work</span>
+      </div>
+    </div>
+
+    <div class="demos">
+      <div class="demo demo-inv glass-l" data-rv>
+        <div class="demo-bar"><span>Lab 01 — Invoice builder</span><span class="live"><i class="dot blue"></i>Live — try it</span></div>
+        <div class="inv">
+          <div class="inv-top"><strong>Invoice 0142</strong><span>Due in 14 days</span></div>
+          <div class="inv-table">
+            <div class="inv-h"><span>Description</span><span>Qty</span><span>Rate</span><span>Amount</span></div>
+            <div class="inv-rows"></div>
+          </div>
+          <div class="inv-foot">
+            <button class="btn btn-line" data-add>+ Add a line</button>
+            <div class="inv-sum">
+              <div><span>Subtotal</span><span data-sub>0.00</span></div>
+              <div><span>Tax 6%</span><span data-tax>0.00</span></div>
+              <div class="inv-total"><span>Total</span><strong data-total>$0.00</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo demo-flow" data-rv>
+        <div class="demo-bar"><span>Lab 02 — Inquiry to proposal</span><span class="live"><i class="dot cyan"></i><span data-flow-state>Ready</span></span></div>
+        <div class="flow">
+          <div class="flow-steps">
+            <div class="fl" data-step><em>Trigger</em><span>New inquiry form</span><b>—</b></div>
+            <div class="fl" data-step><em>Condition</em><span>Does it fit a service?</span><b>—</b></div>
+            <div class="fl" data-step><em>Action</em><span>Draft proposal from template</span><b>—</b><i class="bar"><u></u></i></div>
+            <div class="fl" data-step><em>Review</em><span>A person approves before it sends</span><b>—</b></div>
+          </div>
+          <div class="flow-foot"><span data-flow-count>Step 0 of 4</span><button class="btn btn-white" data-run>Run the workflow</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lab-foot" data-rv>
+      <p><span class="mut">Also in the Lab</span><span>Fitness apps</span><span>Software-learning tools</span></p>
+      <a class="link" href="#">Enter the Lab <span class="up">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 06 Proof -->
+<section class="proof dark">
+  <span class="prism-line"></span>
+  <div class="bloom b-rose" style="left:-18%;bottom:-40%;width:76%;height:90%"></div>
+  <div class="wrap">
+    <p class="label">[ 05 — In their words ]</p>
+    <blockquote class="quote">“Really <em>understood</em> the vision and intent of what we are trying to build.”</blockquote>
+    <div class="attrib glass-d" data-rv>
+      <div><strong>Dan Urman</strong><span>Overwatch Security Group</span></div>
+      <a class="link" href="https://contra.com/p/kkAoBllU-overwatch-security-group-security-firm-framer-website" target="_blank" rel="noopener">Read the review on Contra <span class="up">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 07 Method + founder -->
+<section class="method light" id="method">
+  <div class="bloom b-cool" style="right:-20%;top:-18%;width:60%;height:48%"></div>
+  <div class="wrap">
+    <div class="manifesto-grid">
+      <p class="label">[ 06 — Method ]</p>
+      <p class="statement" data-rv>One active build at a time. A written scope, a fixed fee, and progress you can see every week, with <em>the person doing the work</em> on the other end of every message.</p>
+    </div>
+    <ol class="steps">
+      <li><span class="idx">01</span><h3>Find the useful problem</h3><p>What is working, what is in the way, and what would make a real difference.</p></li>
+      <li><span class="idx">02</span><h3>Agree on the shape</h3><p>A written scope, one fixed number and a realistic schedule before work begins.</p></li>
+      <li><span class="idx">03</span><h3>Build with a clear view</h3><p>Design and development in one pair of hands, shared weekly, with focused feedback.</p></li>
+      <li><span class="idx">04</span><h3>Launch with confidence</h3><p>Tested, checked and handed over with a recorded walkthrough. Care is there if you want it.</p></li>
+    </ol>
+    <div class="founder">
+      <div class="portrait"><span>[ Portrait of Brandon — natural light ]</span></div>
+      <div class="founder-text">
+        <p class="label">[ The founder ]</p>
+        <h3 class="founder-name">Brandon<br>Del Rosario</h3>
+        <p class="lede dark-text">Designer and developer, based in Virginia Beach. A background in cyber operations and strategic planning shapes how the studio works: understand the problem, make a clear plan, and sweat the details most people never notice.</p>
+        <a class="link" href="#">More about the studio <span class="up">↗</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 Field notes -->
+<section class="notes light" id="notes">
+  <div class="wrap notes-grid">
+    <div class="notes-left">
+      <div>
+        <p class="label">[ 07 — Field notes ]</p>
+        <p class="lede dark-text">Straight answers, written down. What things cost, what works, and what we would do in your position.</p>
+      </div>
+      <a class="link" href="#">Read all notes <span class="up">↗</span></a>
+    </div>
+    <div class="notes-list">
+      <a class="note" href="#"><span class="small">Web design</span><span class="note-t">What a website costs in Hampton Roads in 2026</span><span class="small r">9 min</span><span class="up">↗</span></a>
+      <a class="note" href="#"><span class="small">Business apps</span><span class="note-t">Does your service business need a customer portal?</span><span class="small r">7 min</span><span class="up">↗</span></a>
+      <a class="note" href="#"><span class="small">Automation</span><span class="note-t">What to automate first in a small service business</span><span class="small r">8 min</span><span class="up">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 09 Brief + footer -->
+<section class="brief light" id="brief">
+  <div class="flood"></div>
+  <div class="flood-fade"></div>
+  <div class="wrap">
+    <p class="label">[ 08 — Start a project brief ]</p>
+    <h2 class="display brief-title"><span class="split w300">Let’s make something</span> <span class="split w500">brilliant.</span></h2>
+    <div class="brief-q">
+      <h3>What do you need?</h3>
+      <p class="small">Step 1 of 4 — a few short questions, then a clear proposal and schedule</p>
+    </div>
+    <div class="choices" role="radiogroup" aria-label="What do you need?">
+      <button class="choice glass-l" role="radio" aria-checked="false"><span class="small">A</span><span class="choice-t">A website</span></button>
+      <button class="choice glass-l" role="radio" aria-checked="false"><span class="small">B</span><span class="choice-t">A business app</span></button>
+      <button class="choice glass-l" role="radio" aria-checked="false"><span class="small">C</span><span class="choice-t">Automation</span></button>
+      <button class="choice glass-l" role="radio" aria-checked="false"><span class="small">D</span><span class="choice-t">Not sure yet</span></button>
+    </div>
+    <p class="brief-next" hidden><a class="btn btn-ink btn-lg" href="#"><span>Continue the brief</span><svg class="arr" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4.5M11 3V9.5" stroke="currentColor" stroke-width="1.5"/></svg></a><span class="small" data-picked></span></p>
+
+    <footer class="foot">
+      <div>
+        <a class="brand" href="#top" style="--mark-bg:#fff"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><rect width="17" height="17" fill="currentColor"/><rect x="9.75" y="9.75" width="15.5" height="15.5" stroke="currentColor" stroke-width="1.5" fill="#fff"/></svg><span>light + logic</span></a>
+        <p class="small">© 2026 Light + Logic Digital — Virginia Beach, VA</p>
+      </div>
+      <nav class="foot-links" aria-label="Footer"><a href="#work">Work</a><a href="#capabilities">Capabilities</a><a href="#lab">Lab</a><a href="#method">Studio</a><a href="#notes">Notes</a><a href="https://contra.com/brandon_del_rosario_j9d08fjt" target="_blank" rel="noopener">Contra ↗</a><a href="#" class="mut">Privacy</a></nav>
+    </footer>
+  </div>
+</section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
