@@ -67,27 +67,6 @@
   tick();
   setInterval(tick, 1000);
 
-  /* ---------- Work rows (accordion) ---------- */
-  const openRow = (r) => {
-    const b = $('.row-body', r);
-    r.classList.add('is-open');
-    $('.row-head', r).setAttribute('aria-expanded', 'true');
-    gsap.fromTo(b, { height: 0 }, { height: 'auto', duration: 0.9, ease: 'expo.inOut', onComplete: refresh });
-    gsap.fromTo($$('.capture, .row-info', b), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.9, delay: 0.25, stagger: 0.08, ease: 'expo.out' });
-  };
-  const closeRow = (r) => {
-    const b = $('.row-body', r);
-    $('.row-head', r).setAttribute('aria-expanded', 'false');
-    gsap.to(b, { height: 0, duration: 0.7, ease: 'expo.inOut', onComplete() { r.classList.remove('is-open'); gsap.set(b, { clearProps: 'height' }); refresh(); } });
-  };
-  $$('.row').forEach((row) =>
-    $('.row-head', row).addEventListener('click', () => {
-      const wasOpen = row.classList.contains('is-open');
-      $$('.row.is-open').forEach(closeRow);
-      if (!wasOpen) openRow(row);
-    })
-  );
-
   /* ---------- Capabilities ---------- */
   const caps = $$('.cap');
   const vigs = $$('.vig');
@@ -309,8 +288,11 @@
       .fromTo(mWords, { opacity: 0.13 }, { opacity: 1, stagger: 0.05, ease: 'none' })
       .from('.signature', { opacity: 0, y: 20, duration: 0.6 }, '>-0.2');
 
-    // Work rows
-    gsap.from('.work .row', { y: 60, opacity: 0, duration: 1.1, ease: 'expo.out', stagger: 0.09, scrollTrigger: { trigger: '.work-list', start: 'top 85%' } });
+    // Work tiles: each opens like a shutter, then light reveals it.
+    // Without hover (phones, tablets), the tile in the middle of the screen is lit.
+    gsap.fromTo('.tile', { clipPath: 'inset(100% 0% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.3, ease: 'expo.out', stagger: 0.12, scrollTrigger: { trigger: '.tiles', start: 'top 82%' } });
+    if (!matchMedia('(hover: hover)').matches)
+      $$('.tile').forEach((t) => ScrollTrigger.create({ trigger: t, start: 'top 55%', end: 'bottom 45%', toggleClass: 'is-lit' }));
 
     // Capabilities: pinned on desktop, scroll drives the three figures
     if (isDesktop) {
