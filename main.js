@@ -91,7 +91,7 @@
   /* ---------- Capabilities ---------- */
   const caps = $$('.cap');
   const vigs = $$('.vig');
-  const figLabels = ['Fig. 01 — Wireframe to finished page', 'Fig. 02 — A spreadsheet becomes a tool', 'Fig. 03 — A workflow that runs itself'];
+  const figLabels = ['Wireframe to finished page', 'A spreadsheet becomes a tool', 'A workflow that runs itself'];
   let capI = -1;
   let capPin = null;
   const setCap = (i, p) => {
@@ -100,7 +100,6 @@
       caps.forEach((c, k) => { c.classList.toggle('is-on', k === i); c.setAttribute('aria-selected', k === i); });
       vigs.forEach((v, k) => v.classList.toggle('is-on', k === i));
       $('[data-fig-label]').textContent = figLabels[i];
-      $('[data-fig-count]').textContent = `0${i + 1} / 03`;
     }
     const v = vigs[i];
     if (i === 0) v.style.setProperty('--x', (88 - 76 * p).toFixed(1));
@@ -271,6 +270,8 @@
 
   /* ---------- Hero intro ---------- */
   let heroWords = [];
+  const splits = new Map();
+  const unsplit = (el) => { const sp = splits.get(el); if (sp) { sp.revert(); splits.delete(el); } };
   const heroIn = () => {
     body.classList.remove('is-loading');
     lenis && lenis.start();
@@ -280,7 +281,7 @@
       .from(`${H} .a-fan`, { scale: 1.6, svgOrigin: APEX, duration: 1.8 }, 0)
       .from('.hero-glow', { opacity: 0, scale: 0.6, duration: 1.6 }, 0)
       .from('.hero-label', { opacity: 0, y: 16, duration: 0.8 }, 0.2)
-      .from(heroWords, { yPercent: 115, duration: 1.2, stagger: 0.06 }, 0.25)
+      .from(heroWords, { yPercent: 115, duration: 1.2, stagger: 0.06, onComplete: () => $$('.hero-title .split').forEach(unsplit) }, 0.25)
       .from('.nav > *', { opacity: 0, y: -20, duration: 0.9, stagger: 0.07, clearProps: 'transform,opacity,transition' }, 0.5)
       .from('.hero-lede, .hero-actions > *', { opacity: 0, y: 24, duration: 1, stagger: 0.08, clearProps: 'transform,opacity,transition' }, 0.7)
       .from('.status', { opacity: 0, y: 30, duration: 1 }, 0.9);
@@ -291,12 +292,12 @@
   /* ---------- Scroll scenes ---------- */
   const scenes = () => {
     // Headline splits (lines are masked, words rise)
-    const words = new Map();
-    $$('.split').forEach((el) => words.set(el, SplitText.create(el, { type: 'lines,words', linesClass: 'ln' }).words));
-    heroWords = $$('.hero-title .split').flatMap((el) => words.get(el));
-    $$('.sec-title, .brief-title').forEach((h) =>
-      gsap.from($$('.split', h).flatMap((el) => words.get(el)), { yPercent: 115, duration: 1.2, ease: 'expo.out', stagger: 0.06, scrollTrigger: { trigger: h, start: 'top 88%' } })
-    );
+    $$('.split').forEach((el) => splits.set(el, SplitText.create(el, { type: 'lines,words', linesClass: 'ln' })));
+    heroWords = $$('.hero-title .split').flatMap((el) => splits.get(el).words);
+    $$('.sec-title, .brief-title').forEach((h) => {
+      const parts = $$('.split', h);
+      gsap.from(parts.flatMap((el) => splits.get(el).words), { yPercent: 115, duration: 1.2, ease: 'expo.out', stagger: 0.06, onComplete: () => parts.forEach(unsplit), scrollTrigger: { trigger: h, start: 'top 88%' } });
+    });
 
     // Hero drifts away as you leave it
     gsap.to(H, { yPercent: 14, opacity: 0.35, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
